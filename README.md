@@ -19,8 +19,9 @@ Projekt stworzony na potrzeby zadania rekrutacyjnego.
 ```
 
 ## Instalacja i uruchomienie testów wykorzystując virtual environment i konsolę bash
-- Klonowanie repozytorium ```https://github.com/krzysztofgrabczynski/RevoProject.git```
-- Stworzenie wirtualnego środowiska poprzez: ``` python -m venv venv ``` 
+- Klonowanie repozytorium ```git clone https://github.com/krzysztofgrabczynski/RevoProject.git```
+- Przejście do folderu projektu ``` cd RevoProject/ ```
+- Stworzenie wirtualnego środowiska poprzez ``` python -m venv venv ``` 
 - Użycie ``` . venv/Scripts/activate ``` aby zaktywować lokalne środowisko
 - Zainsalowanie zależności używając ``` pip install -r requirements.txt ```
 - Użycie komendy poprzez ``` python manage.py download_revo_data ``` lub uruchomienie testów jednostkowych poprzez ``` python manage.py test ```
