@@ -1,11 +1,8 @@
 from django.core.management.base import BaseCommand
+from rest_framework.exceptions import APIException
 import requests
 import json
-
-
-class APIException(Exception):
-    pass
-
+ 
 
 class Command(BaseCommand):
     API_URL = "https://example.pl/api/download-revo-data"
@@ -28,7 +25,7 @@ class Command(BaseCommand):
     def fetch_revo_data(self) -> requests.Response:
         try:
             revo_data_response = requests.get(self.API_URL)
-        except requests.ConnectionError as e:
+        except requests.ConnectionError:
             raise APIException("Connection error")
 
         if revo_data_response.status_code != 200:
@@ -41,6 +38,12 @@ class Command(BaseCommand):
             raise ValueError("Data expected to be a list")
         
         for item in data:
+            if not isinstance(item, dict):
+                raise ValueError("Each item must be a dictionary")
+
+            if not all(key in item for key in ("id", "name", "is_active", "tags")):
+                raise ValueError("Missing keys in data item")
+            
             if not isinstance(item["id"], int):
                 raise ValueError("Field 'id' must be an integer")
             if not isinstance(item["name"], str):
