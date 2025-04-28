@@ -15,7 +15,8 @@ Projekt stworzony na potrzeby zadania rekrutacyjnego.
 |
 │   .gitignore
 │   README.md
-│   manage.py          
+│   manage.py
+|   requirements.txt   
 ```
 
 ## Instalacja i uruchomienie testów wykorzystując virtual environment i konsolę bash
