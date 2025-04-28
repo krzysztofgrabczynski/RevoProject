@@ -24,7 +24,7 @@ Projekt stworzony na potrzeby zadania rekrutacyjnego.
 - Stworzenie wirtualnego środowiska poprzez ``` python -m venv venv ``` 
 - Użycie ``` . venv/Scripts/activate ``` aby zaktywować lokalne środowisko
 - Zainsalowanie zależności używając ``` pip install -r requirements.txt ```
-- Użycie komendy poprzez ``` python manage.py download_revo_data ``` lub uruchomienie testów jednostkowych poprzez ``` python manage.py test ```
+- Uruchomienie testów jednostkowych poprzez ``` python manage.py test ```
 
 
 ## Dodatkowe informacje:
