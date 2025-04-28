@@ -5,8 +5,6 @@ from rest_framework.exceptions import APIException
 from unittest.mock import patch
 from requests.exceptions import ConnectionError
 
-# from revo.management.commands.download_revo_data import APIException
-
 
 class DownloadRevoDataCommandTests(TestCase):
     @patch("revo.management.commands.download_revo_data.requests.get")
